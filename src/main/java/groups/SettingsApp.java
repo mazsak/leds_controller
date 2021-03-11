@@ -6,7 +6,6 @@ import settings.Strings;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 import java.io.File;
 import java.nio.file.Paths;
 import java.util.Arrays;

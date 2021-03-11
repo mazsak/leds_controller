@@ -36,7 +36,7 @@ public class Window extends JFrame {
     }
 
     private void settings() {
-        setSize(800, 600);
+        setSize(800, 500);
         setBackground(Color.lightGray);
         setTitle(strings.getNameApp());
         setLayout(new FlowLayout());

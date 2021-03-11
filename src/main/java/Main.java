@@ -1,7 +1,4 @@
 import settings.Settings;
-import settings.Strings;
-
-import java.io.File;
 
 public class Main {
 

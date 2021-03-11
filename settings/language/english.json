@@ -7,5 +7,6 @@
   "bit_depth": "Bit Depth",
   "settings_app": "App Settings",
   "language": "Language",
-  "zone": "Zone"
+  "zone": "Zone",
+  "scale": "Scale mode (width x height)"
 }

@@ -27,6 +27,8 @@ public class Strings {
     private String settingsApp;
     private String language;
     private String zone;
+    @JsonProperty("scale")
+    private String scale;
 
     @JsonIgnore
     private String currentLanguage;

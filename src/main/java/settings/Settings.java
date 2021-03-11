@@ -10,6 +10,8 @@ import java.util.Map;
 public class Settings {
     public static String LANGUAGE;
     public static String DEFAULT_DEVICE;
+    public static Integer SCALE_WIDTH;
+    public static Integer SCALE_HEIGHT;
 
     public static void load() {
         ObjectMapper mapper = new ObjectMapper();
@@ -41,6 +43,8 @@ public class Settings {
         Map<String, String> data = new HashMap<>();
         data.put("LANGUAGE", LANGUAGE);
         data.put("DEFAULT_DEVICE", DEFAULT_DEVICE);
+        data.put("SCALE_WIDTH", String.valueOf(SCALE_WIDTH));
+        data.put("SCALE_HEIGHT", String.valueOf(SCALE_HEIGHT));
         return data;
     }
 
@@ -52,6 +56,12 @@ public class Settings {
                     break;
                 case "DEFAULT_DEVICE":
                     DEFAULT_DEVICE = entry.getValue();
+                    break;
+                case "SCALE_WIDTH":
+                    SCALE_WIDTH = Integer.valueOf(entry.getValue());
+                    break;
+                case "SCALE_HEIGHT":
+                    SCALE_HEIGHT = Integer.valueOf(entry.getValue());
                     break;
                 default:
                     System.out.println("Fail settings");
