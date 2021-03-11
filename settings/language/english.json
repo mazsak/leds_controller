@@ -1,0 +1,11 @@
+{
+  "name_app": "LEDs Controller",
+  "device": "Device",
+  "screen": "Screen",
+  "resolution": "Resolution",
+  "refresh_rate": "Refresh Rate",
+  "bit_depth": "Bit Depth",
+  "settings_app": "App Settings",
+  "language": "Language",
+  "zone": "Zone"
+}
