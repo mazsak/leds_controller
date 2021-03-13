@@ -1,3 +1,4 @@
+import data.ArduinoConnection;
 import settings.Settings;
 
 public class Main {

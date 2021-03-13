@@ -27,8 +27,24 @@ public class Strings {
     private String settingsApp;
     private String language;
     private String zone;
-    @JsonProperty("scale")
     private String scale;
+    @JsonProperty("top_amount")
+    private String topAmount;
+    @JsonProperty("bottom_amount")
+    private String bottomAmount;
+    @JsonProperty("sides_amount")
+    private String sidesAmount;
+    private String thickness;
+    @JsonProperty("stand_width")
+    private String standWidth;
+    @JsonProperty("invert_order")
+    private String invertOrder;
+    private String calculate;
+    private String start;
+    private String stop;
+    @JsonProperty("live_preview")
+    private String livePreview;
+
 
     @JsonIgnore
     private String currentLanguage;

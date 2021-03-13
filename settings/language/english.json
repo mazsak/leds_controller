@@ -7,6 +7,16 @@
   "bit_depth": "Bit Depth",
   "settings_app": "App Settings",
   "language": "Language",
-  "zone": "Zone",
-  "scale": "Scale mode (width x height)"
+  "zone": "Zones",
+  "scale": "Scale mode (width x height)",
+  "top_amount": "Top Amount",
+  "bottom_amount": "Bottom Amount",
+  "sides_amount": "Sides Amount",
+  "thickness": "Thickness",
+  "stand_width": "Stand Width",
+  "invert_order": "Invert order",
+  "calculate": "Calculate",
+  "start": "Start",
+  "stop": "Stop",
+  "live_preview": "Live Preview"
 }
