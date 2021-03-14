@@ -69,8 +69,9 @@ public class DataInApp {
     }
 
     public static DataInApp getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new DataInApp();
+        }
         return instance;
     }
 

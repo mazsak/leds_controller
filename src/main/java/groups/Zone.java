@@ -7,6 +7,7 @@ import settings.Strings;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.Arrays;
 
 public class Zone extends JPanel {
     private Strings strings;
@@ -22,6 +23,7 @@ public class Zone extends JPanel {
     private JSpinner standWidth;
     private JCheckBox invertOrder;
     private Preview preView;
+    private JComboBox startingPosition;
 
     public Zone() {
         strings = Strings.getInstance();
@@ -94,6 +96,21 @@ public class Zone extends JPanel {
             Settings.change();
         });
         add(invertOrder);
+        add(new JLabel());
+
+        JLabel startingPositionLabel = new JLabel(strings.getStartingPosition());
+        add(startingPositionLabel);
+
+        String[] positions = {strings.getTopLeft(),
+                strings.getTopRight(), strings.getBottomLeft(), strings.getBottomRight(),
+                strings.getMiddle()};
+        startingPosition = new JComboBox<>(positions);
+        startingPosition.setSelectedItem(Settings.STARTING_POSITION);
+        startingPosition.addActionListener(e -> {
+            Settings.STARTING_POSITION = (String) startingPosition.getSelectedItem();
+            Settings.change();
+        });
+        add(startingPosition);
 
         add(new JLabel());
         add(new JLabel());

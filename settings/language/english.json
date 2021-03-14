@@ -18,5 +18,11 @@
   "calculate": "Calculate",
   "start": "Start",
   "stop": "Stop",
-  "live_preview": "Live Preview"
+  "live_preview": "Live Preview",
+  "starting_position": "Starting position",
+  "top_left": "Top left",
+  "top_right": "Top right",
+  "bottom_left": "Bottom left",
+  "bottom_right": "Bottom right",
+  "middle": "Middle"
 }

@@ -19,6 +19,7 @@ public class Settings {
     public static Double THICKNESS;
     public static Double STAND_WIDTH;
     public static Boolean INVERT_ORDER;
+    public static String STARTING_POSITION;
 
     public static void load() {
         ObjectMapper mapper = new ObjectMapper();
@@ -59,7 +60,8 @@ public class Settings {
         data.put("SIDES_AMOUNT", String.valueOf(SIDES_AMOUNT));
         data.put("THICKNESS", String.valueOf(THICKNESS));
         data.put("STAND_WIDTH", String.valueOf(STAND_WIDTH));
-        data.put("INVERT_ORDER",String.valueOf(INVERT_ORDER));
+        data.put("INVERT_ORDER", String.valueOf(INVERT_ORDER));
+        data.put("STARTING_POSITION", STARTING_POSITION);
         return data;
     }
 
@@ -95,7 +97,11 @@ public class Settings {
                     break;
                 case "INVERT_ORDER":
                     INVERT_ORDER = Boolean.valueOf(entry.getValue());
-                    default:
+                    break;
+                case "STARTING_POSITION":
+                    STARTING_POSITION = entry.getValue();
+                    break;
+                default:
                     System.out.println("Fail settings");
             }
         }

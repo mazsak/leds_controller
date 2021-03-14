@@ -44,6 +44,17 @@ public class Strings {
     private String stop;
     @JsonProperty("live_preview")
     private String livePreview;
+    @JsonProperty("starting_position")
+    private String startingPosition;
+    @JsonProperty("top_left")
+    private String topLeft;
+    @JsonProperty("top_right")
+    private String topRight;
+    @JsonProperty("bottom_left")
+    private String bottomLeft;
+    @JsonProperty("bottom_right")
+    private String bottomRight;
+    private String middle;
 
 
     @JsonIgnore
