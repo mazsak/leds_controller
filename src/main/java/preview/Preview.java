@@ -39,7 +39,7 @@ public class Preview extends JFrame {
         int bottomSizeZone = (int) ((screenSize.getWidth() * (1 - Settings.STAND_WIDTH)) / Settings.BOTTOM_AMOUNT);
         int sidesSizeZone = (int) (screenSize.getHeight() / Settings.SIDES_AMOUNT);
 
-        int number = 1;
+        int number = 0;
 
         remove(photo);
         photo = new JLabel(new ImageIcon(image));
@@ -81,9 +81,9 @@ public class Preview extends JFrame {
         super.paint(g);
         g.drawImage(image, 0, 0, image.getWidth(), image.getHeight(), null);
         dataInApp.getZones().forEach(zone -> {
-//            if (!dataInApp.isOnCalculate()) {
-//                zone.calculateColor(image);
-//            }
+            if (!dataInApp.isOnCalculate()) {
+                zone.calculateColor(image);
+            }
             g.setColor(zone.getColor());
             g.fillRect(zone.getLocation().x, zone.getLocation().y, zone.getSize().width, zone.getSize().height);
         });

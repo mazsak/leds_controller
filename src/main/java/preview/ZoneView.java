@@ -46,4 +46,8 @@ public class ZoneView {
         }
         color = new Color(red / size, green / size, blue / size);
     }
+
+    public String getStringColor() {
+        return String.format("%02x%02x%02x %03d", color.getRed(), color.getGreen(), color.getBlue(), number);
+    }
 }

@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 
 @Data
 public class DataInApp {
@@ -32,15 +31,21 @@ public class DataInApp {
         if (Settings.DEFAULT_DEVICE.equals("")) {
             defaultDevice = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
         } else {
-            defaultDevice = devices.stream().filter(device -> device.getIDstring().replace("\\", "").equals(Settings.DEFAULT_DEVICE)).findFirst().get();
+            try {
+                defaultDevice = devices.stream().filter(device -> device.getIDstring().replace("\\", "").equals(Settings.DEFAULT_DEVICE)).findFirst().get();
+            } catch (Exception e) {
+                defaultDevice = devices.get(0);
+            }
         }
 
         zonesThread = new Thread(() -> {
             while (onCalculate) {
-                for (int i = 0; i < zones.size(); i++){
-                zones.get(i).calculateColor(image);
+                BufferedImage i = getNewImage();
+                for (ZoneView zone : zones) {
+                    zone.calculateColor(i);
                     try {
-                        ArduinoConnection.getInstance().sendColor(zones.get(i).getColor(), i);
+                        ArduinoConnection.getInstance().sendColor(zone.getStringColor());
+                        Thread.sleep(10);
                     } catch (IOException | InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -49,7 +54,7 @@ public class DataInApp {
         });
     }
 
-    public void startCalculateZones(){
+    public void startCalculateZones() {
         onCalculate = true;
         if (!zonesThread.isAlive()) {
             zonesThread.start();
@@ -58,7 +63,7 @@ public class DataInApp {
     }
 
 
-    public void stopCalculateZones(){
+    public void stopCalculateZones() {
         onCalculate = false;
         System.out.println("Stop calculate zones");
     }
