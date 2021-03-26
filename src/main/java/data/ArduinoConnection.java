@@ -11,7 +11,7 @@ public class ArduinoConnection {
     public SerialPort sp;
 
     private ArduinoConnection(){
-        sp = SerialPort.getCommPort("COM4"); // device name must be changed
+        sp = SerialPort.getCommPort("COM5"); // device name must be changed
         sp.setComPortParameters(9600, 8, 1, 0); // default connection settings for Arduino
         sp.setComPortTimeouts(SerialPort.TIMEOUT_WRITE_BLOCKING, 0, 0); // block until bytes can be written
     }
